@@ -157,19 +157,19 @@ extern class RAudio
 
 	// Stop music playing
 	@:native('StopMusicStream')
-	static function StopSound(music:Music):Void;
+	static function StopMusicStream(music:Music):Void;
 
 	// Pause music playing
 	@:native('PauseMusicStream')
-	static function PauseSound(music:Music):Void;
+	static function PauseMusicStream(music:Music):Void;
 
 	// Resume playing paused music
 	@:native('ResumeMusicStream')
-	static function ResumeSound(music:Music):Void;
+	static function ResumeMusicStream(music:Music):Void;
 
 	// Seek music to a position (in seconds)
 	@:native('SeekMusicStream')
-	static function ResumeSound(music:Music, position:Single):Void;
+	static function SeekMusicStream(music:Music, position:Single):Void;
 
 	// Set volume for music (1.0 is max level)
 	@:native('SetMusicVolume')
