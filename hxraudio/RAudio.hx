@@ -124,4 +124,70 @@ extern class RAudio
 	// Unload samples data loaded with LoadWaveSamples()
 	@:native('UnloadWaveSamples')
 	static function UnloadWaveSamples(samples:cpp.RawPointer<Single>):Void;
+	
+	// Music management functions
+
+	// Load music stream from file
+	@:native('LoadMusicStream')
+	static function LoadWave(fileName:cpp.ConstCharStar):Music;
+
+	// Load music stream from data
+	@:native('LoadMusicStreamFromMemory')
+	static function LoadWaveFromMemory(fileType:cpp.ConstCharStar, fileData:cpp.RawConstPointer<cpp.UInt8>, dataSize:Int):Music;
+
+	// Checks if a music stream is ready
+	@:native('IsMusicReady')
+	static function IsMusicReady(music:Music):Bool;
+
+	// Unload music stream
+	@:native('UnloadMusicStream')
+	static function UnloadMusicStream(music:Music):Void;
+
+	// Start music playing
+	@:native('PlayMusicStream')
+	static function PlayMusicStream(music:Music):Void;
+
+	// Check if music is playing
+	@:native('IsMusicStreamPlaying')
+	static function IsMusicStreamPlaying(music:Music):Bool;
+
+	// Updates buffers for music streaming
+	@:native('UpdateMusicStream')
+	static function UpdateMusicStream(music:Music):Void;
+
+	// Stop music playing
+	@:native('StopMusicStream')
+	static function StopSound(music:Music):Void;
+
+	// Pause music playing
+	@:native('PauseMusicStream')
+	static function PauseSound(music:Music):Void;
+
+	// Resume playing paused music
+	@:native('ResumeMusicStream')
+	static function ResumeSound(music:Music):Void;
+
+	// Seek music to a position (in seconds)
+	@:native('SeekMusicStream')
+	static function ResumeSound(music:Music, position:Single):Void;
+
+	// Set volume for music (1.0 is max level)
+	@:native('SetMusicVolume')
+	static function SetMusicVolume(music:Music, volume:Single):Void;
+
+	// Set pitch for a music (1.0 is base level)
+	@:native('SetMusicPitch')
+	static function SetMusicPitch(music:Music, pitch:Single):Void;
+
+	// Set pan for a music (0.0 to 1.0, 0.5=center)
+	@:native('SetMusicPan')
+	static function SetMusicPan(music:Music, pan:Single):Void;
+
+	// Get music time length (in seconds)
+	@:native('GetMusicTimeLength')
+	static function GetMusicTimeLength(music:Music):Single;
+
+	// Get current music time played (in seconds)
+	@:native('GetMusicTimePlayed')
+	static function GetMusicTimePlayed(music:Music):Single;
 }
