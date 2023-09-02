@@ -104,4 +104,24 @@ extern class RAudio
 	// Set pan for a sound (0.0 to 1.0, 0.5=center)
 	@:native('SetSoundPan')
 	static function SetSoundPan(sound:Sound, pan:Single):Void;
+
+	// Copy a wave to a new wave
+	@:native('WaveCopy')
+	static function WaveCopy(wave:Wave):Wave;
+
+	// Crop a wave to defined samples range
+	@:native('WaveCrop')
+	static function WaveCrop(wave:cpp.RawPointer<Wave>, initSample:Int, finalSample:Int):Void;
+
+	// Convert wave data to desired format
+	@:native('WaveFormat')
+	static function WaveFormat(wave:cpp.RawPointer<Wave>, initSample:Int, finalSample:Int, channels:Int):Void;
+
+	// Load samples data from wave as a floats array
+	@:native('LoadWaveSamples')
+	static function LoadWaveSamples(wave:Wave):cpp.RawPointer<Single>;
+
+	// Unload samples data loaded with LoadWaveSamples()
+	@:native('UnloadWaveSamples')
+	static function UnloadWaveSamples(samples:cpp.RawPointer<Single>):Void;
 }
