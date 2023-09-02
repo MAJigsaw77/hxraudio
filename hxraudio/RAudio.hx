@@ -70,4 +70,38 @@ extern class RAudio
 	// Export wave sample data to code (.h), returns true on success
 	@:native('ExportWaveAsCode')
 	static function ExportWaveAsCode(wave:Wave, fileName:cpp.ConstCharStar):Bool;
+	
+	// Wave/Sound management functions
+
+	// Play a sound
+	@:native('PlaySound')
+	static function PlaySound(sound:Sound):Void;
+
+	// Stop playing a sound
+	@:native('StopSound')
+	static function StopSound(sound:Sound):Void;
+
+	// Pause a sound
+	@:native('PauseSound')
+	static function PauseSound(sound:Sound):Void;
+
+	// Resume a paused sound
+	@:native('ResumeSound')
+	static function ResumeSound(sound:Sound):Void;
+
+	// Check if a sound is currently playing
+	@:native('IsSoundPlaying')
+	static function IsSoundPlaying(sound:Sound):Bool;
+
+	// Set volume for a sound (1.0 is max level)
+	@:native('SetSoundVolume')
+	static function SetSoundVolume(sound:Sound, volume:Single):Void;
+
+	// Set pitch for a sound (1.0 is base level)
+	@:native('SetSoundPitch')
+	static function SetSoundPitch(sound:Sound, pitch:Single):Void;
+
+	// Set pan for a sound (0.0 to 1.0, 0.5=center)
+	@:native('SetSoundPan')
+	static function SetSoundPan(sound:Sound, pan:Single):Void;
 }
