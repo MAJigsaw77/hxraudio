@@ -1,0 +1,20 @@
+{
+	"name":"hxraudio",
+	"url":"https://github.com/MAJigsaw77/hxraudio",
+	"license":"MIT",
+	"tags":[
+		"cpp",
+		"haxe",
+		"raudio"
+	],
+	"description":"Haxe/hxcpp @:native bindings for RAudio.",
+	"version":"1.0.0",
+	"releasenote":"First Release.",
+	"contributors":[
+		"MAJigsaw77"
+	],
+	"classPath":"src",
+	"dependencies":{
+		"hxcpp":""
+	}
+}
