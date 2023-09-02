@@ -1,0 +1,24 @@
+name: Testing
+on:
+  push:
+    branches: main
+  workflow_dispatch:
+jobs:
+  Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@main
+        with:
+          submodules: true
+
+      - name: Setup Haxe
+        uses: krdlab/setup-haxe@master
+        with:
+          haxe-version: 4.3.1
+
+      - name: Compiling 
+        run: |
+          haxelib git hxraudio https://github.com/MAJigsaw77/hxraudio.git ${{github.ref_name}} --quiet
+          cd sample
+          haxe build.hxml
