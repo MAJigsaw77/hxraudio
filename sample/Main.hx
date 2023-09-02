@@ -13,16 +13,22 @@ class Main
 
 		var music:Music = RAudio.LoadMusicStream("anothermedium.ogg");
 
+		RAudio.SetMusicPitch(music, 0.5);
+
 		RAudio.PlayMusicStream(music);
 
 		Thread.create(function()
 		{
-			RAudio.UpdateMusicStream(music);
+			while (RAudio.IsMusicStreamPlaying(music))
+			{
+				RAudio.UpdateMusicStream(music);
+			}
 		});
 
 		Sys.sleep(20); // Wait 20 seconds until deinitialization
 		
 		// De-Initialization
+		RAudio.StopMusicStream(music);
 		RAudio.UnloadMusicStream(music);
 		RAudio.CloseAudioDevice();
 	}
