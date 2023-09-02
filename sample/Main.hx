@@ -2,7 +2,7 @@ package;
 
 import hxraudio.RAudio;
 import hxraudio.Types;
-import sys.io.Thread;
+import sys.thread.Thread;
 
 class Main
 {
