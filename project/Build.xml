@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<pragma once="true" />
+
+	<files id="haxe">
+		<compilerflag value="-I${haxelib:hxraudio}/project/raudio/src" />
+	</files>
+
+	<files id="__main__">
+		<compilerflag value="-I${haxelib:hxraudio}/project/raudio/src" />
+	</files>
+
+	<files id="raudio">
+		<compilerflag value="-I${haxelib:hxraudio}/project/raudio/src" />
+
+		<file name="${haxelib:hxraudio}/project/raudio/src/raudio.c" />
+
+		<compilerflag value="-DRAUDIO_STANDALONE" />
+		<compilerflag value="-DSUPPORT_MODULE_RAUDIO" />
+
+		<include name="${haxelib:hxraudio}/project/Defines.xml" />
+	</files>
+
+	<target id="haxe">
+		<files id="raudio" />
+	</target>
+</xml>
