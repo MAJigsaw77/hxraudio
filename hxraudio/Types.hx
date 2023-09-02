@@ -28,7 +28,7 @@ extern class Wave
 @:native('rAudioBuffer')
 extern class RAudioBuffer {}
 
-@:buildXml('<include name="${haxelib:hxlua}/project/Build.xml" />')
+@:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('lua.hpp')
 @:native('rAudioProcessor')
 extern class RAudioProcessor {}
