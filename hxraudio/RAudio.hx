@@ -129,11 +129,11 @@ extern class RAudio
 
 	// Load music stream from file
 	@:native('LoadMusicStream')
-	static function LoadWave(fileName:cpp.ConstCharStar):Music;
+	static function LoadMusicStream(fileName:cpp.ConstCharStar):Music;
 
 	// Load music stream from data
 	@:native('LoadMusicStreamFromMemory')
-	static function LoadWaveFromMemory(fileType:cpp.ConstCharStar, fileData:cpp.RawConstPointer<cpp.UInt8>, dataSize:Int):Music;
+	static function LoadMusicStreamFromMemory(fileType:cpp.ConstCharStar, fileData:cpp.RawConstPointer<cpp.UInt8>, dataSize:Int):Music;
 
 	// Checks if a music stream is ready
 	@:native('IsMusicReady')
