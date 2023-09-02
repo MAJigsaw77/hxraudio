@@ -4,6 +4,9 @@
 
 Haxe/hxcpp @:native bindings for [RAudio](https://github.com/raysan5/raudio).
 
+> **Note**
+> This lib is still work in progress.
+
 ### Installation
 
 You can install it through `Haxelib`
