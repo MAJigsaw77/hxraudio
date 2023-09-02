@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xml>
+	<compilerflag value="-DSUPPORT_FILEFORMAT_WAV" if="SUPPORT_FILEFORMAT_WAV" />
+	<compilerflag value="-DSUPPORT_FILEFORMAT_OGG" if="SUPPORT_FILEFORMAT_OGG" />
+	<compilerflag value="-DSUPPORT_FILEFORMAT_MP3" if="SUPPORT_FILEFORMAT_MP3" />
+	<compilerflag value="-DSUPPORT_FILEFORMAT_QOA" if="SUPPORT_FILEFORMAT_QOA" />
+	<compilerflag value="-DSUPPORT_FILEFORMAT_FLAC" if="SUPPORT_FILEFORMAT_FLAC" />
+	<compilerflag value="-DSUPPORT_FILEFORMAT_XM" if="SUPPORT_FILEFORMAT_XM" />
+	<compilerflag value="-DSUPPORT_FILEFORMAT_MOD" if="SUPPORT_FILEFORMAT_MOD" />
+</xml>
