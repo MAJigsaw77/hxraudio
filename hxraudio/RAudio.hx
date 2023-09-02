@@ -23,7 +23,7 @@ extern class RAudio
 
 	// Set master volume (listener)
 	@:native('SetMasterVolume')
-	static function IsAudioDeviceReady(volume:Single):Void;
+	static function SetMasterVolume(volume:Single):Void;
 
 	// Wave/Sound loading/unloading functions
 
