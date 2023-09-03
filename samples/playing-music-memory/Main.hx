@@ -27,7 +27,7 @@ class Main
 			}
 		});
 
-		Sys.sleep(20); // Wait 20 seconds until deinitialization
+		Sys.sleep(30); // Wait 30 seconds until deinitialization
 		
 		// De-Initialization
 		RAudio.StopMusicStream(music);
