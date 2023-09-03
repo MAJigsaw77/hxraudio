@@ -212,4 +212,60 @@ extern class RAudio
 	// Check if any audio stream buffers requires refill
 	@:native('IsAudioStreamProcessed')
 	static function IsAudioStreamProcessed(stream:AudioStream):Bool;
+
+	// Play audio stream
+	@:native('PlayAudioStream')
+	static function PlayAudioStream(stream:AudioStream):Void;
+
+	// Pause audio stream
+	@:native('PauseAudioStream')
+	static function PauseAudioStream(stream:AudioStream):Void;
+
+	// Resume audio stream
+	@:native('ResumeAudioStream')
+	static function ResumeAudioStream(stream:AudioStream):Void;
+
+	// Check if audio stream is playing
+	@:native('IsAudioStreamPlaying')
+	static function IsAudioStreamPlaying(stream:AudioStream):Bool;
+
+	// Stop audio stream
+	@:native('StopAudioStream')
+	static function StopAudioStream(stream:AudioStream):Void;
+
+	// Set volume for audio stream (1.0 is max level)
+	@:native('SetAudioStreamVolume')
+	static function SetAudioStreamVolume(stream:AudioStream, volume:Single):Void;
+
+	// Set pitch for audio stream (1.0 is base level)
+	@:native('SetAudioStreamPitch')
+	static function SetAudioStreamPitch(stream:AudioStream, pitch:Single):Void;
+
+	// Set pan for audio stream  (0.0 to 1.0, 0.5=center)
+	@:native('SetAudioStreamPan')
+	static function SetAudioStreamPan(stream:AudioStream, pan:Single):Void;
+
+	// Default size for new audio streams
+	@:native('SetAudioStreamBufferSizeDefault')
+	static function SetAudioStreamBufferSizeDefault(size:Int):Void;
+
+	// Audio thread callback to request new data
+	@:native('SetAudioStreamCallback')
+	static function SetAudioStreamCallback(stream:AudioStream, callback:AudioCallback):Void;
+
+	// Attach audio stream processor to stream
+	@:native('AttachAudioStreamProcessor')
+	static function AttachAudioStreamProcessor(stream:AudioStream, processor:AudioCallback):Void;
+
+	// Detach audio stream processor from stream
+	@:native('DetachAudioStreamProcessor')
+	static function DetachAudioStreamProcessor(stream:AudioStream, processor:AudioCallback):Void;
+
+	// Attach audio stream processor to the entire audio pipeline
+	@:native('AttachAudioMixedProcessor')
+	static function AttachAudioMixedProcessor(processor:AudioCallback):Void;
+
+	// Detach audio stream processor from the entire audio pipeline
+	@:native('DetachAudioMixedProcessor')
+	static function DetachAudioMixedProcessor(processor:AudioCallback):Void;
 }
