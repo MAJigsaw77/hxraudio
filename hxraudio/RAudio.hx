@@ -206,8 +206,8 @@ extern class RAudio
 	static function UnloadAudioStream(stream:AudioStream):Void;
 
 	// Update audio stream buffers with data
-	@:native('UnloadAudioStream')
-	static function UnloadAudioStream(stream:AudioStream, data:cpp.RawConstPointer<cpp.Void>, samplesCount:Int):Void;
+	@:native('UpdateAudioStream')
+	static function UpdateAudioStream(stream:AudioStream, data:cpp.RawConstPointer<cpp.Void>, samplesCount:Int):Void;
 
 	// Check if any audio stream buffers requires refill
 	@:native('IsAudioStreamProcessed')
