@@ -15,9 +15,7 @@ class Main
 		// Initialization
 		RAudio.InitAudioDevice();
 
-		var music:Music = RAudio.LoadMusicStreamFromMemory(".ogg", cpp.RawPointer.addressOf(data[0]), data.length);
-
-		RAudio.SetMusicPitch(music, 0.5);
+		var music:Music = RAudio.LoadMusicStreamFromMemory(".ogg", untyped __cpp__('&({0}[0])', data), data.length);
 
 		RAudio.PlayMusicStream(music);
 
