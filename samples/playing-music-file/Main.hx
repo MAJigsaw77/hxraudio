@@ -20,9 +20,7 @@ class Main
 		Thread.create(function()
 		{
 			while (RAudio.IsMusicStreamPlaying(music))
-			{
 				RAudio.UpdateMusicStream(music);
-			}
 		});
 
 		Sys.sleep(30); // Wait 30 seconds until deinitialization
