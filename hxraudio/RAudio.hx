@@ -190,4 +190,26 @@ extern class RAudio
 	// Get current music time played (in seconds)
 	@:native('GetMusicTimePlayed')
 	static function GetMusicTimePlayed(music:Music):Single;
+
+	// AudioStream management functions
+
+	// Load audio stream (to stream raw audio pcm data)
+	@:native('LoadAudioStream')
+	static function LoadAudioStream(sampleRate:cpp.UInt32, sampleSize:cpp.UInt32, channels:cpp.UInt32):AudioStream;
+
+	// Checks if an audio stream is ready
+	@:native('IsAudioStreamReady')
+	static function IsAudioStreamReady(stream:AudioStream):Bool;
+
+	// Unload audio stream and free memory
+	@:native('UnloadAudioStream')
+	static function UnloadAudioStream(stream:AudioStream):Void;
+
+	// Update audio stream buffers with data
+	@:native('UnloadAudioStream')
+	static function UnloadAudioStream(stream:AudioStream, data:cpp.RawConstPointer<cpp.Void>, samplesCount:Int):Void;
+
+	// Check if any audio stream buffers requires refill
+	@:native('IsAudioStreamProcessed')
+	static function IsAudioStreamProcessed(stream:AudioStream):Bool;
 }
