@@ -1,17 +1,21 @@
 package;
 
+import haxe.io.BytesData;
 import hxraudio.RAudio;
 import hxraudio.Types;
+import sys.io.File;
 import sys.thread.Thread;
 
 class Main
 {
 	public static function main():Void
 	{
+		var data:BytesData = File.getBytes("star.ogg").getData();
+
 		// Initialization
 		RAudio.InitAudioDevice();
 
-		var music:Music = RAudio.LoadMusicStream("star.ogg");
+		var music:Music = RAudio.LoadMusicStreamFromMemory(".ogg", cpp.RawPointer.addressOf(data[0]), data.length);
 
 		RAudio.SetMusicPitch(music, 0.5);
 
