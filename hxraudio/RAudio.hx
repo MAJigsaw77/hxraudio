@@ -1,6 +1,6 @@
 package hxraudio;
 
-#if (!cpp && macro)
+#if !cpp
 #error 'RAudio supports only C++ target platforms.'
 #end
 import hxraudio.Types;
