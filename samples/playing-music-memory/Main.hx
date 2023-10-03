@@ -10,7 +10,7 @@ class Main
 {
 	public static function main():Void
 	{
-		var data:BytesData = File.getBytes("star.ogg").getData();
+		final data:BytesData = File.getBytes("star.ogg").getData();
 
 		// Initialization
 		RAudio.InitAudioDevice();
