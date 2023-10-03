@@ -18,7 +18,7 @@ class Main
 		// Initialization
 		RAudio.InitAudioDevice();
 
-		var music:Music = RAudio.LoadMusicStreamFromMemory(Path.extension(path), cpp.Pointer.ofArray(data).constRaw, data.length);
+		var music:Music = RAudio.LoadMusicStreamFromMemory("." + Path.extension(path), cpp.Pointer.ofArray(data).constRaw, data.length);
 
 		RAudio.PlayMusicStream(music);
 
