@@ -32,7 +32,7 @@ class Main
 					RAudio.UpdateMusicStream(music);
 			});
 		}
-		http.onError = (message:String) -> Sys.println('Encountered a error: $messege');
+		http.onError = (message:String) -> Sys.println('Encountered a error: $message');
 		http.request(true);
 
 		Sys.sleep(30); // Wait 30 seconds until deinitializatinon.
