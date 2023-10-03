@@ -1,6 +1,7 @@
 package;
 
 import haxe.io.BytesData;
+import haxe.io.Path;
 import hxraudio.RAudio;
 import hxraudio.Types;
 import sys.io.File;
@@ -8,14 +9,16 @@ import sys.thread.Thread;
 
 class Main
 {
+	private static final path:String = 'star.ogg';
+
 	public static function main():Void
 	{
-		final data:BytesData = File.getBytes("star.ogg").getData();
+		final data:BytesData = File.getBytes(path).getData();
 
 		// Initialization
 		RAudio.InitAudioDevice();
 
-		var music:Music = RAudio.LoadMusicStreamFromMemory(".ogg", cpp.Pointer.ofArray(data).constRaw, data.length);
+		var music:Music = RAudio.LoadMusicStreamFromMemory(Path.extension(path), cpp.Pointer.ofArray(data).constRaw, data.length);
 
 		RAudio.PlayMusicStream(music);
 
