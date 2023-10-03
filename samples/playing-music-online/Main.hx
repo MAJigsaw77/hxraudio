@@ -1,35 +1,49 @@
 package;
 
+import haxe.io.Bytes;
 import haxe.io.BytesData;
+import haxe.Http;
 import hxraudio.RAudio;
 import hxraudio.Types;
-import sys.io.File;
 import sys.thread.Thread;
 
 class Main
 {
+	private static var http:Http;
+	private static var music:Music;
+
 	public static function main():Void
 	{
-		var data:BytesData = File.getBytes("mysteriousroom2.ogg").getData();
-
 		// Initialization
 		RAudio.InitAudioDevice();
 
-		var music:Music = RAudio.LoadMusicStreamFromMemory(".ogg", cpp.Pointer.ofArray(data).constRaw, data.length);
-
-		RAudio.PlayMusicStream(music);
-
-		Thread.create(function()
+		http = new Http('https://github.com/Rovoska/undertale/raw/master/sound/audio/mus_mysteriousroom2.ogg');
+		http.onBytes = function(bytes:Bytes)
 		{
-			while (RAudio.IsMusicStreamPlaying(music))
-				RAudio.UpdateMusicStream(music);
-		});
+			final data:BytesData = bytes.getData();
 
-		Sys.sleep(30); // Wait 30 seconds until deinitialization
-		
+			music = RAudio.LoadMusicStreamFromMemory(".ogg", cpp.Pointer.ofArray(data).constRaw, data.length);
+
+			RAudio.PlayMusicStream(music);
+
+			Thread.create(function()
+			{
+				while (RAudio.IsMusicStreamPlaying(music))
+					RAudio.UpdateMusicStream(music);
+			});
+		}
+		http.onError = (message:String) -> Sys.println('Encountered a error: $messege');
+		http.request(true);
+
+		Sys.sleep(30); // Wait 30 seconds until deinitializatinon.
+
 		// De-Initialization
-		RAudio.StopMusicStream(music);
-		RAudio.UnloadMusicStream(music);
+		if (music != null)
+		{
+			RAudio.StopMusicStream(music);
+			RAudio.UnloadMusicStream(music);
+		}
+
 		RAudio.CloseAudioDevice();
 	}
 }
