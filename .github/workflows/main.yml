@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        sample: [playing-music-file, playing-music-memory]
+        sample: [playing-music-file, playing-music-memory, playing-music-online]
     steps:
       - name: Checkout
         uses: actions/checkout@main
