@@ -7,6 +7,7 @@ import hxraudio.Types;
 import sys.io.File;
 import sys.thread.Thread;
 
+@:headerInclude('stdarg.h')
 @:headerCode('#define TRACELOG(level, ...) TraceLog(__VA_ARGS__)')
 @:cppNamespaceCode('
 void TraceLog(const char *text, ...)
