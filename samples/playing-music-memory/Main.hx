@@ -7,6 +7,24 @@ import hxraudio.Types;
 import sys.io.File;
 import sys.thread.Thread;
 
+@:headerInclude('stdarg.h')
+@:cppFileCode('#define TRACELOG(level, ...) TraceLog(__VA_ARGS__)')
+@:cppNamespaceCode('
+void TraceLog(const char *text, ...)
+{
+	va_list args;
+
+	va_start(args, text);
+
+	char buffer[256] = { 0 };
+
+	strcpy(buffer, text);
+	strcat(buffer, "\\n");
+
+	vprintf(buffer, args);
+
+	va_end(args);
+}')
 class Main
 {
 	private static final path:String = 'star.ogg';
