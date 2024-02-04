@@ -8,6 +8,7 @@ import sys.io.File;
 import sys.thread.Thread;
 
 @:headerInclude('stdarg.h')
+@:cppInclude('raudio.h')
 @:cppFileCode('
 #undef TRACELOG
 #define TRACELOG(level, ...) TraceLog(__VA_ARGS__)')
