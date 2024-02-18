@@ -25,6 +25,10 @@ extern class RAudio
 	@:native('SetMasterVolume')
 	static function SetMasterVolume(volume:Single):Void;
 
+	// Get master volume (listener)
+	@:native('GetMasterVolume')
+	static function GetMasterVolume():Single;
+
 	// Wave/Sound loading/unloading functions
 
 	// Load wave data from file
@@ -47,13 +51,17 @@ extern class RAudio
 	@:native('LoadSoundFromWave')
 	static function LoadSoundFromWave(wave:Wave):Sound;
 
+	// Create a new sound that shares the same sample data as the source sound, does not own the sound data
+	@:native('LoadSoundAlias')
+	static function LoadSoundAlias(source:Sound):Sound;
+
 	// Checks if a sound is ready
 	@:native('IsSoundReady')
 	static function IsSoundReady(sound:Sound):Bool;
 
 	// Update sound buffer with new data
 	@:native('UpdateSound')
-	static function UpdateSound(sound:Sound, data:cpp.RawConstPointer<cpp.Void>, samplesCount:Int):Void;
+	static function UpdateSound(sound:Sound, data:cpp.RawConstPointer<cpp.Void>, frameCount:Int):Void;
 
 	// Unload wave data
 	@:native('UnloadWave')
@@ -62,6 +70,10 @@ extern class RAudio
 	// Unload sound
 	@:native('UnloadSound')
 	static function UnloadSound(sound:Sound):Void;
+
+	// Unload a sound alias (does not deallocate sample data)
+	@:native('UnloadSoundAlias')
+	static function UnloadSoundAlias(alias:Sound):Void;
 
 	// Export wave data to file, returns true on success
 	@:native('ExportWave')
