@@ -12,12 +12,15 @@ extern class RAudio
 {
 	// Audio device management functions
 
+	// Initialize audio device and context
 	@:native('InitAudioDevice')
 	static function InitAudioDevice():Void;
 
+	// Close the audio device and context
 	@:native('CloseAudioDevice')
 	static function CloseAudioDevice():Void;
 
+	// Check if audio device has been initialized successfully
 	@:native('IsAudioDeviceReady')
 	static function IsAudioDeviceReady():Bool;
 
