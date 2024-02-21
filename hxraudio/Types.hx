@@ -22,7 +22,7 @@ private extern class WaveImpl
 	var data:cpp.RawPointer<cpp.Void>; // Buffer data pointer
 }
 
-typedef Wave = cpp.Struct<Wave>;
+typedef Wave = cpp.Struct<WaveImpl>;
 
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
