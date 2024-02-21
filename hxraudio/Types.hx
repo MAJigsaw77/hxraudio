@@ -13,7 +13,7 @@ typedef AudioCallback = cpp.Callable<(bufferData:cpp.RawPointer<cpp.Void>, frame
 @:unreflective
 @:structAccess
 @:native('Wave')
-private extern class WaveImpl
+extern class Wave
 {
 	var frameCount:cpp.UInt32; // Total number of frames (considering channels)
 	var sampleRate:cpp.UInt32; // Frequency (samples per second)
@@ -21,8 +21,6 @@ private extern class WaveImpl
 	var channels:cpp.UInt32; // Number of channels (1-mono, 2-stereo, ...)
 	var data:cpp.RawPointer<cpp.Void>; // Buffer data pointer
 }
-
-typedef Wave = cpp.Struct<WaveImpl>;
 
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
@@ -39,7 +37,7 @@ extern class RAudioProcessor {}
 @:unreflective
 @:structAccess
 @:native('AudioStream')
-private extern class AudioStreamImpl
+extern class AudioStream
 {
 	var buffer:cpp.RawPointer<RAudioBuffer>; // Pointer to internal data used by the audio system
 	var processor:cpp.RawPointer<RAudioProcessor>; // Pointer to internal data processor, useful for audio effects
@@ -48,27 +46,23 @@ private extern class AudioStreamImpl
 	var channels:cpp.UInt32; // Number of channels (1-mono, 2-stereo, ...)
 }
 
-typedef AudioStream = cpp.Struct<AudioStreamImpl>;
-
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
 @:unreflective
 @:structAccess
 @:native('Sound')
-private extern class SoundImpl
+extern class Sound
 {
 	var stream:AudioStream; // Audio stream
 	var frameCount:cpp.UInt32; // Total number of frames (considering channels)
 }
-
-typedef Sound = cpp.Struct<SoundImpl>;
 
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
 @:unreflective
 @:structAccess
 @:native('Music')
-private extern class MusicImpl
+extern class Music
 {
 	var stream:AudioStream; // Audio stream
 	var frameCount:cpp.UInt32; // Total number of frames (considering channels)
@@ -76,5 +70,3 @@ private extern class MusicImpl
 	var ctxType:Int; // Type of music context (audio filetype)
 	var ctxData:cpp.RawPointer<cpp.Void>; // Audio context data, depends on type
 }
-
-typedef Music = cpp.Struct<MusicImpl>;
