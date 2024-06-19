@@ -15,7 +15,7 @@ import sys.thread.Thread;
 
 #define TRACELOG(level, ...) TraceLog(__VA_ARGS__)
 
-void TraceLog(const char *text, ...)
+static void TraceLog(const char *text, ...)
 {
 	va_list args;
 
