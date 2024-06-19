@@ -7,9 +7,12 @@ import hxraudio.Types;
 import sys.io.File;
 import sys.thread.Thread;
 
-@:headerInclude('stdarg.h')
+@:headerInclude('cstdio')
+@:headerInclude('cstdarg')
+@:headerInclude('cstring')
 @:headerCode('
 #undef TRACELOG
+
 #define TRACELOG(level, ...) TraceLog(__VA_ARGS__)
 
 void TraceLog(const char *text, ...)
