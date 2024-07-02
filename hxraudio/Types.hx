@@ -28,27 +28,27 @@ extern class Wave
 	static function alloc():Wave;
 
 	/**
-	 * Total number of frames (considering channels)
+	 * Total number of frames (considering channels).
 	 */
 	var frameCount:cpp.UInt32;
 
 	/**
-	 * Frequency (samples per second)
+	 * Frequency (samples per second).
 	 */
 	var sampleRate:cpp.UInt32;
 
 	/**
-	 * Bit depth (bits per sample): 8, 16, 32 (24 not supported)
+	 * Bit depth (bits per sample): 8, 16, 32 (24 not supported).
 	 */
 	var sampleSize:cpp.UInt32;
 
 	/**
-	 * Number of channels (1-mono, 2-stereo, ...)
+	 * Number of channels (1-mono, 2-stereo, ...).
 	 */
 	var channels:cpp.UInt32;
 
 	/**
-	 * Buffer data pointer
+	 * Buffer data pointer.
 	 */
 	var data:cpp.RawPointer<cpp.Void>;
 }
@@ -82,27 +82,27 @@ extern class AudioStream
 	static function alloc():AudioStream;
 
 	/**
-	 * Pointer to internal data used by the audio system
+	 * Pointer to internal data used by the audio system.
 	 */
 	var buffer:cpp.RawPointer<RAudioBuffer>;
 
 	/**
-	 * Pointer to internal data processor, useful for audio effects
+	 * Pointer to internal data processor, useful for audio effects.
 	 */
 	var processor:cpp.RawPointer<RAudioProcessor>;
 
 	/**
-	 * Frequency (samples per second)
+	 * Frequency (samples per second).
 	 */
 	var sampleRate:cpp.UInt32;
 
 	/**
-	 * Bit depth (bits per sample): 8, 16, 32 (24 not supported)
+	 * Bit depth (bits per sample): 8, 16, 32 (24 not supported).
 	 */
 	var sampleSize:cpp.UInt32;
 
 	/**
-	 * Number of channels (1-mono, 2-stereo, ...)
+	 * Number of channels (1-mono, 2-stereo, ...).
 	 */
 	var channels:cpp.UInt32;
 }
@@ -124,12 +124,12 @@ extern class Sound
 	static function alloc():Sound;
 
 	/**
-	 * Audio stream
+	 * Audio stream.
 	 */
 	var stream:AudioStream;
 
 	/**
-	 * Total number of frames (considering channels)
+	 * Total number of frames (considering channels).
 	 */
 	var frameCount:cpp.UInt32;
 }
@@ -151,27 +151,27 @@ extern class Music
 	static function alloc():Music;
 
 	/**
-	 * Audio stream
+	 * Audio stream.
 	 */
 	var stream:AudioStream;
 
 	/**
-	 * Total number of frames (considering channels)
+	 * Total number of frames (considering channels).
 	 */
 	var frameCount:cpp.UInt32;
 
 	/**
-	 * Music looping enable
+	 * Music looping enable.
 	 */
 	var looping:Bool;
 
 	/**
-	 * Type of music context (audio filetype)
+	 * Type of music context (audio filetype).
 	 */
 	var ctxType:Int;
 
 	/**
-	 * Audio context data, depends on type
+	 * Audio context data, depends on type.
 	 */
 	var ctxData:cpp.RawPointer<cpp.Void>;
 }
