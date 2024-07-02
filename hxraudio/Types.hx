@@ -58,6 +58,22 @@ extern class Wave
 }
 
 /**
+ * rAudioBuffer, opaque audio buffer struct.
+ */
+@:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
+@:include('raudio.h')
+@:native('rAudioBuffer')
+extern class RAudioBuffer {}
+
+/**
+ * rAudioProcessor, opaque audio processor struct.
+ */
+@:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
+@:include('raudio.h')
+@:native('rAudioProcessor')
+extern class RAudioProcessor {}
+
+/**
  * AudioStream, custom audio stream.
  */
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
