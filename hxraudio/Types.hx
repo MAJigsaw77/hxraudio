@@ -8,10 +8,14 @@ package hxraudio;
 #end
 class Types {}
 
-@:dox(hide)
+/**
+ * Callback for audio data processing.
+ */
 typedef AudioCallback = cpp.Callable<(bufferData:cpp.RawPointer<cpp.Void>, frames:cpp.UInt32) -> Void>;
 
-@:dox(hide)
+/**
+ * Wave, audio wave data.
+ */
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
 @:unreflective
@@ -53,19 +57,9 @@ extern class Wave
 	var data:cpp.RawPointer<cpp.Void>;
 }
 
-@:dox(hide)
-@:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
-@:include('raudio.h')
-@:native('rAudioBuffer')
-extern class RAudioBuffer {}
-
-@:dox(hide)
-@:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
-@:include('raudio.h')
-@:native('rAudioProcessor')
-extern class RAudioProcessor {}
-
-@:dox(hide)
+/**
+ * AudioStream, custom audio stream.
+ */
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
 @:unreflective
@@ -107,7 +101,9 @@ extern class AudioStream
 	var channels:cpp.UInt32;
 }
 
-@:dox(hide)
+/**
+ * Sound.
+ */
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
 @:unreflective
@@ -134,7 +130,9 @@ extern class Sound
 	var frameCount:cpp.UInt32;
 }
 
-@:dox(hide)
+/**
+ * Music, audio stream, anything longer than ~10 seconds should be streamed.
+ */
 @:buildXml('<include name="${haxelib:hxraudio}/project/Build.xml" />')
 @:include('raudio.h')
 @:unreflective
