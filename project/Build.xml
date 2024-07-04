@@ -14,7 +14,7 @@
 		<compilerflag value="-I${haxelib:hxraudio}/project/raudio/src" />
 
 		<compilerflag value="-Wno-missing-braces" />
-		<compilerflag value="-Wunused-result" />
+		<compilerflag value="-Wno-unused-result" />
 
 		<compilerflag value="-DRAUDIO_STANDALONE" />
 		<compilerflag value="-DSUPPORT_MODULE_RAUDIO" />
