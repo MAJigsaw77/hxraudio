@@ -13,10 +13,13 @@
 	<files id="raudio">
 		<compilerflag value="-I${haxelib:hxraudio}/project/raudio/src" />
 
-		<file name="${haxelib:hxraudio}/project/raudio/src/raudio.c" />
+		<compilerflag value="-Wno-missing-braces" />
+		<compilerflag value="-Wunused-result" />
 
 		<compilerflag value="-DRAUDIO_STANDALONE" />
 		<compilerflag value="-DSUPPORT_MODULE_RAUDIO" />
+
+		<file name="${haxelib:hxraudio}/project/raudio/src/raudio.c" />
 
 		<include name="${haxelib:hxraudio}/project/Defines.xml" />
 	</files>
