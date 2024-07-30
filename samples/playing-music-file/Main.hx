@@ -21,24 +21,7 @@ static void TraceLog(const char *text, ...)
 	va_start(args, text);
 
 	#ifdef __ANDROID__
-	switch (level)
-	{
-		case LIBVLC_DEBUG:
-			__android_log_vprint(ANDROID_LOG_DEBUG, "raudio", text, args);
-			break;
-		case LIBVLC_NOTICE:
-			__android_log_vprint(ANDROID_LOG_INFO, "raudio", text, args);
-			break;
-		case LIBVLC_WARNING:
-			__android_log_vprint(ANDROID_LOG_WARN, "raudio", text, args);
-			break;
-		case LIBVLC_ERROR:
-			__android_log_vprint(ANDROID_LOG_ERROR, "raudio", text, args);
-			break;
-		default:
-			__android_log_vprint(ANDROID_LOG_VERBOSE, "raudio", text, args);
-			break;
-	}
+	__android_log_vprint(ANDROID_LOG_INFO, "raudio", text, args);
 	#else
 	vprintf(text, args);
 
