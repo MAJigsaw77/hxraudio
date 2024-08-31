@@ -13,13 +13,15 @@
 	<files id="raudio">
 		<compilerflag value="-I${haxelib:hxraudio}/project/raudio/src" />
 
-		<compilerflag value="-Wno-missing-braces" />
-		<compilerflag value="-Wno-unused-result" />
-
 		<compilerflag value="-DRAUDIO_STANDALONE" />
 		<compilerflag value="-DSUPPORT_MODULE_RAUDIO" />
 
 		<file name="${haxelib:hxraudio}/project/raudio/src/raudio.c" />
+
+		<section unless="MSVC_VER">
+			<compilerflag value="-Wno-missing-braces" />
+			<compilerflag value="-Wno-unused-result" />
+		</section>
 
 		<include name="${haxelib:hxraudio}/project/Defines.xml" />
 	</files>
