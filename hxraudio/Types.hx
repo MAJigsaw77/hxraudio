@@ -25,11 +25,8 @@ extern class Wave
 {
 	/**
 	 * Allocates a new Wave object.
-	 *
-	 * @return A new Wave object.
 	 */
-	@:native('Wave')
-	static function alloc():Wave;
+	function new():Void;
 
 	/**
 	 * Total number of frames (considering channels).
@@ -85,11 +82,8 @@ extern class AudioStream
 {
 	/**
 	 * Allocates a new AudioStream object.
-	 *
-	 * @return A new AudioStream object.
 	 */
-	@:native('AudioStream')
-	static function alloc():AudioStream;
+	function new():Void;
 
 	/**
 	 * Pointer to internal data used by the audio system.
@@ -129,11 +123,8 @@ extern class Sound
 {
 	/**
 	 * Allocates a new Sound object.
-	 *
-	 * @return A new Sound object.
 	 */
-	@:native('Sound')
-	static function alloc():Sound;
+	function new():Void;
 
 	/**
 	 * Audio stream.
@@ -158,11 +149,8 @@ extern class Music
 {
 	/**
 	 * Allocates a new Music object.
-	 *
-	 * @return A new Music object.
 	 */
-	@:native('Music')
-	static function alloc():Music;
+	function new():Void;
 
 	/**
 	 * Audio stream.
